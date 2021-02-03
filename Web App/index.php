@@ -5,7 +5,7 @@
 
   <head>
     <!-- Title of the website that appears on the tab naming -->
-    <title>Title of dataset</title>
+    <title>Plymouth Woodlands</title>
     <!-- Links to css pages for the design of the website -->
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css"  rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
@@ -32,7 +32,7 @@
     <!-- Class that assigns css to bootstrap that displays words onto an image for the design of the site -->
     <div class="jumbotron">
       <div class="container">
-        <h1>Title of Dataset</h1>
+        <h1>Sampling Woodland Sites In The Bircham and Forder Valley</h1>
 
       </div>
     </div>
@@ -59,12 +59,10 @@
 	<!-- Class that assigns the right hand side space that is still within the container of the website-->
 	<div class="col-md-4">
 	<div class="thumbnail">
-
         <!-- Information about the website-->
-        <p>Description of Dataset</p>
+        <p>Data that has been collected over the course of 2016 with volunteers on a Citizen Science project at Poole Farm. This is specifically data gained from sampling woodland sites in the Bircham and Forder Valley. The data has been collected using a set methodology set out in bespoke booklets for this survey methodology. Source: Plymouth City Council</p>
         <!-- Link to the about page-->
-
-
+        <p> To learn more visit the <a href="./about.html"> about</a> page</p>
 	</div>
 
 	<!-- Class creating the formation/uniform of the website-->
