@@ -1,0 +1,105 @@
+@font-face {
+    font-family: 'Shift';
+    font-style: normal;
+    font-weight: normal;
+    src: url("http://s3.amazonaws.com/codecademy-content/courses/ltp/fonts/shift.woff") format("woff");
+}
+@font-face {
+    font-family: 'Shift';
+    font-style: normal;
+    font-weight: bold;
+    src: url("http://s3.amazonaws.com/codecademy-content/courses/ltp/fonts/shift-bold.woff") format("woff");
+}
+/* Sets properties for the 3x3 grid of the tic tac toe game */
+.Square {
+    width: 300px;
+    height: 100px;
+    text-align: center;
+    font-size: 35pt;
+    font-weight: bold;
+    font-family: Verdana;
+    color: black;
+}
+
+/* Sets properties for the naivigation bar */
+.nav{
+    background-color: #C8555A;
+}
+.nav span{
+    font-size: 17px;
+}
+
+.nav a {
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 14px 10px;
+    text-transform: uppercase;
+}
+
+.nav li {
+    display: inline;
+}
+
+/* Sets properties for jumborotron which is a big box that calls for extra attention (special content or information) */
+.jumbotron {
+    background-image:url(../Images/Hoe.jpg);
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron .container {
+    position: relative;
+    top:100px;
+}
+
+.jumbotron h1 {
+    color: #fff;
+    font-size: 48px;
+    font-family: 'Shift', sans-serif;
+    font-weight: bold;
+}
+
+.jumbotron p {
+    font-size: 20px;
+    color: #fff;
+}
+
+.show_more {
+    background-color: #f7f7f7;
+}
+
+.show_more h3 {
+    font-family: 'Shift', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.show_more a {
+    color: #00b0ff;
+}
+
+.Box {
+    background-color: #efefef;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.Box h2{
+    color: #393c3d;
+    font-size: 24px;
+}
+
+.Box p{
+    font-size: 18px;
+    margin-bottom: 13px;
+
+}
+
+.Box h5 {
+    font-size: 24px;
+}
+
+.Box h3{
+    font-size: 20px;
+}
