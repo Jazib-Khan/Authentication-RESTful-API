@@ -23,8 +23,7 @@
         <ul class="pull-right">
           <!-- Links to other pages on the navigation bar but on the right hand side again for readability -->
           <li><a href="./index.php">Home</a></li>
-          <li><a href="./data.html">Data</a></li>
-          <li><a href="./about.html">About</a></li>
+          <li><a href="./data.php">Data</a></li>
         </ul>
       </div>
     </div>
@@ -61,8 +60,7 @@
 	<div class="thumbnail">
         <!-- Information about the website-->
         <p>Data that has been collected over the course of 2016 with volunteers on a Citizen Science project at Poole Farm. This is specifically data gained from sampling woodland sites in the Bircham and Forder Valley. The data has been collected using a set methodology set out in bespoke booklets for this survey methodology. Source: Plymouth City Council</p>
-        <!-- Link to the about page-->
-        <p> To learn more visit the <a href="./about.html"> about</a> page</p>
+
 	</div>
 
 	<!-- Class creating the formation/uniform of the website-->
