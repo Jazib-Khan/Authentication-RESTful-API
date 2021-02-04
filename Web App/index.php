@@ -46,8 +46,11 @@
     <div class="row">
       <div class="col-md-4">
       <div class="thumbnail">
-
-
+          <!-- Information about the website-->
+          <p>Data that has been collected over the course of 2016 with volunteers on a Citizen Science project at Poole Farm.
+              This is specifically data gained from sampling woodland sites in the Bircham and Forder Valley.
+              The data has been collected using a set methodology set out in bespoke booklets for this survey methodology.
+              Source: Plymouth City Council</p>
       </div>
 	<div class="thumbnail">
 
@@ -58,9 +61,8 @@
 	<!-- Class that assigns the right hand side space that is still within the container of the website-->
 	<div class="col-md-4">
 	<div class="thumbnail">
-        <!-- Information about the website-->
-        <p>Data that has been collected over the course of 2016 with volunteers on a Citizen Science project at Poole Farm. This is specifically data gained from sampling woodland sites in the Bircham and Forder Valley. The data has been collected using a set methodology set out in bespoke booklets for this survey methodology. Source: Plymouth City Council</p>
-
+        <p>To view the original dataset <a href="https://plymouth.thedata.place/dataset/woodland-sites/resource/87a2a4cc-3357-4e8f-9a62-234a1c8bed88">click here</a></p>
+        <p>To inspect the data in JSON-LD format <a href="../JSON/index.php">click here</a></p>
 	</div>
 
 	<!-- Class creating the formation/uniform of the website-->
