@@ -47,7 +47,7 @@
                     <?php
                     $header=true;
                     $handle = fopen("../Data/woodlands.csv", "r");
-                    echo '<table>';
+                    echo '<table class="table table-striped">';
                         //display header row if true
                         if ($header) {
                         $csvcontents = fgetcsv($handle);
@@ -67,7 +67,6 @@
                         }
                         echo '</table>';
                     fclose($handle);
-
                     ?>
                 </div>
                 <div class="thumbnail">
