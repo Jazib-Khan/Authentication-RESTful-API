@@ -1,7 +1,5 @@
 <?php
 ?>
-<?php
-?>
 <!DOCTYPE html>
 <html>
 
@@ -12,6 +10,7 @@
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css"  rel="stylesheet">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/main.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
 <body>
@@ -41,15 +40,35 @@
 <!-- Class creating the formation/uniform of the website-->
 <div class="Box">
     <div class="container">
-
-
-
         <!-- Class creating the formation/uniform of the website-->
         <div class="row">
             <div class="col-md-4">
                 <div class="thumbnail">
+                    <?php
+                    $header=true;
+                    $handle = fopen("../Data/woodlands.csv", "r");
+                    echo '<table>';
+                        //display header row if true
+                        if ($header) {
+                        $csvcontents = fgetcsv($handle);
+                        echo '<tr>';
+                            foreach ($csvcontents as $headercolumn) {
+                            echo "<th>$headercolumn</th>";
+                            }
+                            echo '</tr>';
+                        }
+                        // displaying contents
+                        while ($csvcontents = fgetcsv($handle)) {
+                        echo '<tr>';
+                            foreach ($csvcontents as $column) {
+                            echo "<td>$column</td>";
+                            }
+                            echo '</tr>';
+                        }
+                        echo '</table>';
+                    fclose($handle);
 
-
+                    ?>
                 </div>
                 <div class="thumbnail">
 
@@ -60,7 +79,6 @@
             <!-- Class that assigns the right hand side space that is still within the container of the website-->
             <div class="col-md-4">
                 <div class="thumbnail">
-
 
                 </div>
 
