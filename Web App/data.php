@@ -8,8 +8,8 @@
     <title>Plymouth Woodlands</title>
     <!-- Links to css pages for the design of the website -->
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css"  rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="stylesheet" href="assets/CSS/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
@@ -19,7 +19,7 @@
     <div class="container">
         <ul class="pull-left">
             <!-- Image of the logo that is in the navigation class that is contained to be shown on the left hand side for readability -->
-            <li><img src = "../Images/logo.png" width = "100"></li>
+            <li><img src = "assets/Images/logo.png" width = "100"></li>
         </ul>
         <ul class="pull-right">
             <!-- Links to other pages on the navigation bar but on the right hand side again for readability -->
@@ -46,7 +46,7 @@
                 <div class="thumbnail">
                     <?php
                     $header=true;
-                    $handle = fopen("../Data/woodlands.csv", "r");
+                    $handle = fopen("./assets/Data/woodlands.csv", "r");
                     echo '<table class="table table-striped">';
                         //display header row if true
                         if ($header) {

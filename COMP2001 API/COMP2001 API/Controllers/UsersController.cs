@@ -20,12 +20,7 @@ namespace COMP2001_API.Controllers
             _context = context;
         }
 
-        // GET: api/Users
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<User>>> GetUsers()
-        {
-            return await _context.Users.ToListAsync();
-        }
+
 
         // GET: api/Users/5
         [HttpGet("{id}")]
@@ -41,38 +36,79 @@ namespace COMP2001_API.Controllers
             return user;
         }
 
-        // PUT: api/Users/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User user)
+        [HttpGet]
+        public IActionResult Validate(User user, int id)
         {
-            if (id != user.UserId)
+            bool boolResult = getValidation(user, id);
+
+            Dictionary<string, bool> dictionary = new Dictionary<string, bool>();
+            dictionary.Add("verfied", boolResult);
+
+            JsonResult result = new JsonResult(dictionary);
+
+            return Ok(result);
+        }
+
+        private bool getValidation(User user, int id)
+        {
+            bool tempResult = _context.Validate(user, id);
+            return tempResult;
+        }
+
+        public IActionResult Register(User user)
+        {
+            string ResponseMessage = "";
+
+            register(user, out ResponseMessage);
+
+            Dictionary<string, string> values = new Dictionary<string, string>();
+
+            if (ResponseMessage == "208")
             {
-                return BadRequest();
+                values.Add("Call successful, but user id already exists", ResponseMessage);
+                JsonResult result = new JsonResult(values);
+
+                return StatusCode(208);
+            }
+            else if (ResponseMessage == "404")
+            {
+                values.Add("Bad request", ResponseMessage);
+                JsonResult result = new JsonResult(values);
+
+                return NoContent();
+            }
+            else
+            {
+                values.Add("UserID", ResponseMessage);
+                JsonResult result = new JsonResult(values);
+
+                return Ok(result);
             }
 
-            _context.Entry(user).State = EntityState.Modified;
+        }
 
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!UserExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
+        private void register(User user, out string message)
+        {
+            _context.Register(user, out message);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, User user)
+        {
+            _context.Update(user, id);
 
             return NoContent();
         }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            _context.Delete(id);
+
+            return NoContent();
+        }
+
+        
         // POST: api/Users
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.

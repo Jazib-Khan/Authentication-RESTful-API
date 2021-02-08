@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -104,12 +105,72 @@ namespace COMP2001_API.Models
                     .IsRequired()
                     .HasMaxLength(128);
 
-                entity.Property(e => e.Salt).HasMaxLength(36);
+                //entity.Property(e => e.Salt).HasMaxLength(36);
             });
 
             OnModelCreatingPartial(modelBuilder);
         }
 
         partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+
+        public bool Validate(User user, int id)
+        {
+            SqlParameter[] values = { new SqlParameter("@id", id.ToString()),
+                                      new SqlParameter("@firstName", user.FirstName.ToString()),
+                                      new SqlParameter("@LastName", user.LastName.ToString()),
+                                      new SqlParameter("@password", user.Password.ToString())};
+
+            bool verify;
+            var test = Database.ExecuteSqlRaw("EXEC ValidateUser @id, @firstName, @LastName, @password", values);
+            if (test == 1)
+            {
+                verify = true;
+            }
+            else
+            {
+                verify = false;
+            }
+            return verify;
+        }
+
+        public void Register(User user, out string responseMessage)
+        {
+            SqlParameter message = new SqlParameter("@ResponseMessage", "");
+            message.Direction = System.Data.ParameterDirection.Output;
+            message.Size = 30;
+
+            SqlParameter[] sqlParameters = {
+                new SqlParameter("@firstName", user.FirstName.ToString()),
+                new SqlParameter("@lastName", user.LastName.ToString()),
+                new SqlParameter("@email", user.EmailAddress.ToString()),
+                new SqlParameter("@password", user.Password.ToString()),
+                message
+            };
+
+            Database.ExecuteSqlRaw("EXEC Register @firstName, @lastName, @email, @password, @ResponseMessage OUTPUT", sqlParameters);
+
+            responseMessage = message.Value.ToString();
+
+        }
+
+        public void Update(User user, int id)
+        {
+            SqlParameter[] values = {   new SqlParameter("@firstName", user.FirstName.ToString()),
+                                        new SqlParameter("@lastName", user.LastName.ToString()),
+                                        new SqlParameter("@email", user.EmailAddress.ToString()),
+                                        new SqlParameter("@password", user.Password.ToString()),
+                                        new SqlParameter("@id", id.ToString())};
+
+            Database.ExecuteSqlRaw("EXEC UpdateUser @firstName, @lastName, @email, @password, @id", values);
+        }
+
+        public void Delete(int id)
+        {
+            SqlParameter[] values = {   new SqlParameter("@id", id.ToString())};
+
+            Database.ExecuteSqlRaw("EXEC UpdateUser @id", values);
+
+        }
+
     }
 }

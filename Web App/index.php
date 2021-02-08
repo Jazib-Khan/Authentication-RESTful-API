@@ -8,8 +8,8 @@
     <title>Plymouth Woodlands</title>
     <!-- Links to css pages for the design of the website -->
     <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css"  rel="stylesheet">
-    <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="../CSS/main.css">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+    <link rel="stylesheet" href="assets/CSS/main.css">
   </head>
 
   <body>
@@ -18,7 +18,7 @@
       <div class="container">
         <ul class="pull-left">
           <!-- Image of the logo that is in the navigation class that is contained to be shown on the left hand side for readability -->
-          <li><img src = "../Images/logo.png" width = "100"></li>
+          <li><img src = "assets/Images/logo.png" width = "100"></li>
         </ul>
         <ul class="pull-right">
           <!-- Links to other pages on the navigation bar but on the right hand side again for readability -->
@@ -62,7 +62,7 @@
 	<div class="thumbnail">
         <p>Link to <a href="https://github.com/Jazib-Khan/COMP2001">Github</a></p>
         <p>To view the original dataset <a href="https://plymouth.thedata.place/dataset/woodland-sites/resource/87a2a4cc-3357-4e8f-9a62-234a1c8bed88">click here</a></p>
-        <p>To inspect the data in JSON-LD format <a href="../JSON/index.php">click here</a></p>
+        <p>To inspect the data in JSON-LD format <a href="assets/JSON/index.php">click here</a></p>
 	</div>
 
 	<!-- Class creating the formation/uniform of the website-->

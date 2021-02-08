@@ -18,7 +18,7 @@ namespace COMP2001_API.Models
         public string LastName { get; set; }
         public string EmailAddress { get; set; }
         public string Password { get; set; }
-        public string Salt { get; set; }
+        //public string Salt { get; set; }
 
         public virtual ICollection<Password> Passwords { get; set; }
         public virtual ICollection<Session> Sessions { get; set; }
